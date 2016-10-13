@@ -1,0 +1,9 @@
+<h1>This is the page for registering new user</h1>
+<%= form_for @user do |f| %>
+  <%= render "shared/errors", object: @user %>
+  <%= f.email :email, class: "form-control" %>
+  <%= f.password_field :password, class: "form-control" %>
+  <%= f.password_field :password_confirmation, class: "form-control" %>
+  <%= f.submit %>
+
+<% end %>

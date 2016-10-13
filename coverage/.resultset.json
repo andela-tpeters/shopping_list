@@ -196,13 +196,20 @@
         1,
         null
       ],
+      "/Users/andela/Projects/preqc/app/helpers/users_helper.rb": [
+        1,
+        null
+      ],
       "/Users/andela/Projects/preqc/config/routes.rb": [
+        1,
+        1,
         1,
         1,
         1,
         null
       ],
-      "/Users/andela/Projects/preqc/app/controllers/sessions_controller.rb": [
+      "/Users/andela/Projects/preqc/app/controllers/users_controller.rb": [
+        1,
         1,
         1,
         null,
@@ -212,16 +219,17 @@
         2,
         1,
         1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
         1,
         null,
         1,
-        3,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
         null,
         null
       ],
@@ -253,6 +261,6 @@
         null
       ]
     },
-    "timestamp": 1476376152
+    "timestamp": 1476377300
   }
 }
