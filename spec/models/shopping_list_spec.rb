@@ -4,4 +4,8 @@ RSpec.describe ShoppingList, type: :model do
   describe '#belongs_to' do
     it { is_expected.to belong_to :user }
   end
+
+  describe '#validation' do
+    it { is_expected.to validate_presence_of :title }
+  end
 end
