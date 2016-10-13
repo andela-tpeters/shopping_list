@@ -40,6 +40,7 @@ group :development, :test do
   gem "rails-controller-testing"
   gem "coveralls"
   gem "factory_girl_rails"
+  gem "faker"
 end
 
 group :development do
