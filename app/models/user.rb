@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :shopping_lists
   has_secure_password
   validates :email,
     presence: true,

@@ -12,4 +12,8 @@ RSpec.describe User, type: :model do
     it { is_expected.to validate_length_of :password}
     it { is_expected.to allow_value("john@doe.com").for :email}
   end
+
+  describe '#has_many' do
+    it { is_expected.to have_many :shopping_lists }
+  end
 end
