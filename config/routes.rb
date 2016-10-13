@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   post "/shopping_lists/create", to: 'shopping_lists#create'
   get "/shopping_lists/index", to: 'shopping_lists#index'
   get "/shopping_lists/:id/items/new", to: "items#new", as: :new_item
+  post "/shopping_lists/:id/items/create", to: "items#create", as: :create_item
+  get "/shopping_lists/:id/items", to: "items#index", as: :items
 end
