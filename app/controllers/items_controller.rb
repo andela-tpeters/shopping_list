@@ -2,6 +2,10 @@ class ItemsController < ApplicationController
   before_action :current_user
   before_action :shopping_list
 
+  def index
+    @items = @shopping_list.items
+  end
+
   def new
     @item = @shopping_list.items.new
   end
@@ -24,7 +28,7 @@ class ItemsController < ApplicationController
   end
 
   def shopping_list
-    @shopping_list = ShoppingList.find_by(id: params[:id])
+    @shopping_list = current_user.shopping_lists.find_by(id: params[:id])
     redirect_to(items_path) && return if @shopping_list.nil?
     @shopping_list
   end
