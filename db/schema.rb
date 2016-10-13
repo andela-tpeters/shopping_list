@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161013171504) do
+ActiveRecord::Schema.define(version: 20161013201913) do
+
+  create_table "items", force: :cascade do |t|
+    t.integer  "shopping_list_id"
+    t.string   "task"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["shopping_list_id"], name: "index_items_on_shopping_list_id"
+  end
 
   create_table "shopping_lists", force: :cascade do |t|
     t.string   "title"
