@@ -1,1 +1,13 @@
-This is the page for adding new items to a shopping_list
+<h1>New Shopping List Item</h1>
+
+<%= form_tag create_item_path(@shopping_list), method: :post, class: "navbar-form navbar-left search-form" do %>
+  <p><%= text_field_tag(
+      :task,
+      params[:task],
+      placeholder: "Task",
+      class: "form-control"
+  ) %></p>
+  <p>
+    <%= submit_tag %>
+  </p>
+<% end %>

@@ -1,3 +1,7 @@
 <h1>
-  This is the index of the whole application
+Your Shopping Lists
 </h1>
+
+<% @shopping_lists.each.with_index(1) do |item, index| %>
+  <p><%= index %> | Title: <%= item.title %> | Budget: <%= item.budget %> | <a href="/shopping_lists/<%= item.id %>/items">View items</a></p>
+<% end %>

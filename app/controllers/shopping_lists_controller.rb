@@ -6,7 +6,6 @@ class ShoppingListsController < ApplicationController
   end
 
   def new
-    @shopping_list = ShoppingList.new
   end
 
   def create

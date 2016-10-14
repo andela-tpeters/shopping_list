@@ -1,1 +1,13 @@
-This is the index page for items of a shopping list
+<h1> <%= @shopping_list.title %> </h1>
+<h4>Total budget: <%= @shopping_list.budget %></h4>
+<hr>
+<h3> Items </h3>
+<% @items.each.with_index(1) do |item, index| %>
+  <p>
+    <%= index %>  | <%= item.task %>
+  </p>
+<% end %>
+
+<p>
+  <a href="/shopping_lists/<%= @shopping_list.id %>/items/new">Add item</a>
+</p>

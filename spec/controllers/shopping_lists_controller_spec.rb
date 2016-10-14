@@ -12,7 +12,6 @@ RSpec.describe ShoppingListsController, type: :controller do
       it "renders a shopping list page" do
         get :new
         expect(response).to render_template :new
-        expect(assigns(:shopping_list)).not_to be_nil
       end
     end
 
