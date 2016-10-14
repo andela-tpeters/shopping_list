@@ -19,7 +19,7 @@ RSpec.describe ShoppingListsController, type: :controller do
     describe '#create' do
       context "when attributes validate" do
         it "redirects_to to shopping index page" do
-          post :create, params: { title: "First" }
+          post :create, params: { title: "First", budget: 500000 }
           expect(session["flash"]["flashes"]["notice"]).to eq "Shopping List created"
           expect(response).to redirect_to shopping_lists_index_path
         end
@@ -27,7 +27,10 @@ RSpec.describe ShoppingListsController, type: :controller do
 
       context 'when attributes does not validate' do
         it "renders the new template" do
-          post :create, params: {title: ""}
+          post :create, params: {title: "",budget: "twenty"}
+          errors = assigns(:shopping_list).errors.full_messages
+          expect(errors).to include "Budget is not a number"
+          expect(errors).to include "Title can't be blank"
           expect(response).to render_template :new
           expect(session["flash"]["flashes"]["notice"]).to eq "Shopping list creation failed"
         end

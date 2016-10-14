@@ -23,6 +23,6 @@ class ShoppingListsController < ApplicationController
   private
 
   def allowed
-    params.permit(:title)
+    params.permit(:title, :budget)
   end
 end
