@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root "landings#index"
+  get "/login", to: 'sessions#new'
+  get "/logout", to: 'sessions#logout'
   post "/login", to: "sessions#signin"
   get "/user/new", to: "users#new"
   post "/user/create", to: "users#create"

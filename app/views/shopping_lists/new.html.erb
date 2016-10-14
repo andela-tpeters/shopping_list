@@ -1,1 +1,11 @@
 <h1>New Shopping List</h1>
+<%= form_tag shopping_lists_create_path, method: :post do %>
+  <p><%= text_field_tag(
+      :title,
+      params[:title],
+      placeholder: "Title",
+      class: "form-control"
+  ) %> </p>
+  <p><%= number_field_tag :budget, params[:budget], placeholder: "Budget" %> </p>
+  <p><%= submit_tag %></p>
+<% end %>

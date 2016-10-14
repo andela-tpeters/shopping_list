@@ -9,6 +9,28 @@
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div>
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
+    <% if @user %>
+      <%= @user.email %>
+    <% elsif session[:user_id] %>
+      <%= User.find_by(id: session[:user_id]).email %>
+    <% end %>
     <%= yield %>
+    <div class="">
+      <a href="/">Home</a> |
+      <% if session[:user_id] %>
+        <a href="/logout">Logout</a>
+      <% else %>
+        <a href="/login">Login</a>
+      <% end %>
+      <% if session[:user_id].nil? %>
+        | <a href="/user/new">Register</a>
+      <% end %> | <a href="<%= shopping_lists_new_url %>">New Shopping List</a> |
+      <a href="/shopping_lists/index">Shopping Lists</a>
+    </div>
   </body>
 </html>

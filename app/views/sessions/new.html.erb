@@ -1,3 +1,10 @@
 <h1>
-  This is the page for signing in
+  Sign In
 </h1>
+
+<form action="/login" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="email" name="user[email]"><br>
+  <input type="password" name="user[password]"> <br>
+  <input type="submit" name="submit" value="Submit">
+</form>
